@@ -1,0 +1,107 @@
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <title>Gerador de ID Digital</title>
+        
+        <style>
+
+            h1 { 
+		    font-family: Garamond;
+		    font-size:60pt;
+		    color: rgb(13, 12, 117);
+		    text-shadow: 2px 2px 30px #25b612;
+            text-align: center;
+        }
+        
+            h2 {
+
+            font-family: Garamond;
+		    font-size:30pt;
+		    color: black;
+		    text-align: left;                       
+        }
+        </style>
+
+    </head>
+
+<body>
+
+
+
+
+<h1>Crie sua primeira ID Digital na Blockchain da Ethereum!</h1>
+<h2> É totalmente gratuito e você poderá utilizá-la em qualquer lugar</h2>
+<h3> Basta inserir os dados requisitados para obter seu hash personalizado!</h3>
+
+<form name="nome" id="nome" action="#" method="post">
+    <label for="nome">Nome</label>:
+    <input type="text" name="nome"
+    id="nome" size=50 maxlenght=100
+    placeholder="Inserir nome completo" />
+<br/>
+<br/>
+
+<form name="CPF" id="CPF" action="#" method="post">
+        <label for="CPF">CPF</label>:
+        <input type="number" name="CPF"
+        id="CPF" size=50 maxlenght=100
+        placeholder="Inserir CPF (somente números)" />
+<br/>
+<br/>
+
+<form name="Cel" id="Cel" action="#" method="post">
+        <label for="Cel">Celular</label>:
+        <input type="number" name="Celular"
+        id="Celular" size=50 maxlenght=100
+        placeholder="Inserir celular com DDD (só números)" />
+<br/>
+<br/>
+
+<form name="Senha" id="Senha" action="#" method="post">
+        <label for="Senha">Senha</label>:
+        <input type="password" name="Senha"
+        id="Senha" size=50 maxlenght=100
+        placeholder="Digite sua senha (maximo de 100 caracteres)" />
+        
+
+
+<button type="submit" onclick="Registrar()">Registrar</button>
+
+
+</form>
+
+<script>
+
+var form = document.
+function Registrar() {
+    event.preventDefault();
+    $("#statusTransacao").html("&nbsp;");
+    contract.ID(form.nome.value, form.CPF.value, form.Cel.value, form.Senha.value, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
+        if (erro) {
+            console.log("RegistrarID");
+            console.error(erro);
+            alert("Houve um erro ao registrar esse imovel");
+            return
+        }
+        waitForTxToBeMined(resultado, "#statusTransacao");
+    })
+}
+
+</script>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
