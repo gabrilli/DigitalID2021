@@ -1,4 +1,4 @@
-[
+const contractABI = [
 	{
 		"constant": false,
 		"inputs": [
