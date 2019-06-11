@@ -8,7 +8,6 @@
         <title>Gerador de ID Digital</title>
         
         <style>
-
             h1 { 
 		    font-family: Garamond;
 		    font-size:60pt;
@@ -18,7 +17,6 @@
         }
         
             h2 {
-
             font-family: Garamond;
 		    font-size:30pt;
 		    color: black;
@@ -36,6 +34,8 @@
 <h1>Crie sua primeira ID Digital na Blockchain da Ethereum!</h1>
 <h2> É totalmente gratuito e você poderá utilizá-la em qualquer lugar</h2>
 <h3> Basta inserir os dados requisitados para obter seu hash personalizado!</h3>
+
+<div id = "cliente">
 
 <form name="nome" id="nome" action="#" method="post">
     <label for="nome">Nome</label>:
@@ -69,38 +69,25 @@
         
 
 
-<button type="submit" onclick="Registrar()">Registrar</button>
+<button type="submit" onclick="registrar()">Registrar</button>
+<button type = "submit" onclick="pesquisar()">Pesquisar Cliente</button>
+<button type ="submit" onclick="gerarPDF()">Gerar Documento</button>
 
+//criar js do gerarPDF
+
+</div>
 
 </form>
-
-<script>
-
-var form = document.
-function Registrar() {
-    event.preventDefault();
-    $("#statusTransacao").html("&nbsp;");
-    contract.ID(form.nome.value, form.CPF.value, form.Cel.value, form.Senha.value, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
-        if (erro) {
-            console.log("RegistrarID");
-            console.error(erro);
-            alert("Houve um erro ao registrar esse imovel");
-            return
-        }
-        waitForTxToBeMined(resultado, "#statusTransacao");
-    })
-}
-
-</script>
-
-
-
-
 
 
 </body>
 
-
+<script src = "registrar.js"></script> 
+<script src = "pesquisar.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="connectToSmartContract.js"></script>
+<script src="abi.js"></script>
 
 
 
