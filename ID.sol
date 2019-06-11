@@ -5,7 +5,6 @@ contract Digitalid {
     address payable Onwer;
     uint256 Valor;
     address Parceiro;
-    bool public IDConfirmada;
     
    
     
@@ -30,6 +29,7 @@ contract Digitalid {
     
     event NovaID (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador);
     event VerificarID (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador);
+    event Publicar (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador, uint256 Timestamp, uint256 Bloco);
    
     
     constructor (address payable _Onwer, uint _Valor, address _Parceiro) 
@@ -60,12 +60,15 @@ contract Digitalid {
         
         emit NovaID (Nome, CPF, Celular, Identificador);
         
-    
-    Onwer.transfer(address(this).balance);
+        Onwer.transfer(address(this).balance);
         
-    }
-   
+        emit Publicar (Nome, CPF, Celular, Identificador, now, block.number);
+        
+     
+    }    
+        
     
-       
+        
+    
        
    }
