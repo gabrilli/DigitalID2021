@@ -260,12 +260,12 @@
 		"stateMutability": "view",
 		"type": "function"
 	}
-];
+]
 
 if (network === "4") {
     contractAddress = "0x3351c534c705d97e453d240a683c347885a9c79c"; 
 } else {
-    contractAddress = "0xe7402e8cde5566c926f8103b793fa6eeec13c2b5"; 
+    contractAddress = "0x3351c534c705d97e453d240a683c347885a9c79c"; 
 }
 
 contract = web3.eth.contract(contractABI).at(contractAddress);
