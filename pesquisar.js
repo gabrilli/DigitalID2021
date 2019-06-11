@@ -1,9 +1,8 @@
-
-        var frm2 = document.cliente;
+var frm2 = document.cliente;
         function pesquisar () {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
-            contract.Digitalid(frm2.nome.value, frm2.CPF.value, frm2.Cel.value, frm1.identificador.value, function (erro, resultado) {
+            contract.gerarid (frm2.nome.value, frm2.CPF.value, frm2.Cel.value, frm1.identificador.value, function (erro, resultado) {
                 if (erro) {
                     console.log("pesquisarcliente");
                     console.error(erro);
@@ -14,6 +13,5 @@
                 $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
             })
         }
-
 
 
