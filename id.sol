@@ -3,7 +3,7 @@ pragma solidity 0.5.9;
 contract Digitalid {
     
     address payable Onwer;
-    uint256 Valor;
+    //uint256 Valor;
     address Parceiro;
     
    
@@ -32,18 +32,18 @@ contract Digitalid {
     event Publicar (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador, uint256 Timestamp, uint256 Bloco);
    
     
-    constructor (address payable _Onwer, uint _Valor, address _Parceiro) 
+    constructor (address payable _Onwer, address _Parceiro) 
         public {
             Onwer = _Onwer;
-            Valor = _Valor;
+           // Valor = _Valor;
             Parceiro = _Parceiro;
         }
     
    
-    function GerarID (string memory Nome, uint256 CPF, uint256 Celular, string memory Senha) public payable returns (bytes32) {
+    function gerarid (string memory Nome, uint256 CPF, uint256 Celular, string memory Senha) public payable returns (bytes32) {
        
        
-       require (msg.value == Valor, "Pague o valor correto");
+       //require (msg.value == Valor, "Pague o valor correto");
        
        
        bytes32 Identificador = keccak256(abi.encode(Nome, CPF, Celular, Senha));
