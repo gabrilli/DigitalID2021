@@ -1,98 +1,5 @@
 [
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "ListaClientesM3",
-		"outputs": [
-			{
-				"name": "Nome",
-				"type": "string"
-			},
-			{
-				"name": "CPF",
-				"type": "uint256"
-			},
-			{
-				"name": "Celular",
-				"type": "uint256"
-			},
-			{
-				"name": "Identificador",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"name": "ListaClientesM2",
-		"outputs": [
-			{
-				"name": "Nome",
-				"type": "string"
-			},
-			{
-				"name": "CPF",
-				"type": "uint256"
-			},
-			{
-				"name": "Celular",
-				"type": "uint256"
-			},
-			{
-				"name": "Identificador",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "ListaClientesM1",
-		"outputs": [
-			{
-				"name": "Nome",
-				"type": "string"
-			},
-			{
-				"name": "CPF",
-				"type": "uint256"
-			},
-			{
-				"name": "Celular",
-				"type": "uint256"
-			},
-			{
-				"name": "Identificador",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -112,7 +19,7 @@
 				"type": "string"
 			}
 		],
-		"name": "GerarID",
+		"name": "gerarid",
 		"outputs": [
 			{
 				"name": "",
@@ -124,45 +31,10 @@
 		"type": "function"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"name": "ListaClientesM4",
-		"outputs": [
-			{
-				"name": "Nome",
-				"type": "string"
-			},
-			{
-				"name": "CPF",
-				"type": "uint256"
-			},
-			{
-				"name": "Celular",
-				"type": "uint256"
-			},
-			{
-				"name": "Identificador",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"name": "_Onwer",
 				"type": "address"
-			},
-			{
-				"name": "_Valor",
-				"type": "uint256"
 			},
 			{
 				"name": "_Parceiro",
@@ -263,5 +135,129 @@
 		],
 		"name": "Publicar",
 		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "ListaClientesM1",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "ListaClientesM2",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "ListaClientesM3",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "ListaClientesM4",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ]
