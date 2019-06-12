@@ -37,37 +37,41 @@
 
 <div id = "cliente">
 
-<form name="nome" id="nome" action="#" method="post">
-    <label for="nome">Nome</label>:
-    <input type="text" name="nome"
-    id="nome" size=50 maxlenght=100
-    placeholder="Inserir nome completo" />
+        <form action="#" method="POST" name="formRegistro" id="formRegistro">
+           
+            <div>
+            <label for="nome">Nome</label>:
+            <input type="text" name="nome"
+             id="nome" size=50 maxlenght=100
+             placeholder="Inserir nome completo" />
+            </div> 
 <br/>
 <br/>
 
-<form name="CPF" id="CPF" action="#" method="post">
-        <label for="CPF">CPF</label>:
-        <input type="number" name="CPF"
-        id="CPF" size=50 maxlenght=100
-        placeholder="Inserir CPF (somente números)" />
+            <div>             
+            <label for="CPF">CPF</label>:
+            <input type="number" name="CPF"
+            id="CPF" size=50 maxlenght=100
+            placeholder="Inserir CPF (somente números)" />
+            </div>
 <br/>
 <br/>
 
-<form name="Cel" id="Cel" action="#" method="post">
-        <label for="Cel">Celular</label>:
-        <input type="number" name="Celular"
-        id="Celular" size=50 maxlenght=100
-        placeholder="Inserir celular com DDD (só números)" />
+            <div>
+            <label for="Cel">Celular</label>:
+            <input type="number" name="Celular"
+            id="Celular" size=50 maxlenght=100
+            placeholder="Inserir celular com DDD (só números)" />
+            </div>
 <br/>
 <br/>
 
-<form name="Senha" id="Senha" action="#" method="post">
-        <label for="Senha">Senha</label>:
-        <input type="password" name="Senha"
-        id="Senha" size=50 maxlenght=100
-        placeholder="Digite sua senha (maximo de 100 caracteres)" />
-
-
+            <div>
+            <label for="Senha">Senha</label>:
+            <input type="password" name="Senha"
+            id="Senha" size=50 maxlenght=100
+            placeholder="Digite sua senha (maximo de 100 caracteres)" />
+            </div>
 
 <br/>
 <br/>        
@@ -77,7 +81,6 @@
 <button type = "submit" onclick="pesquisar()">Pesquisar Cliente</button>
 <button type ="submit" onclick="gerarPDF()">Gerar Documento</button>
 
-//criar js do gerarPDF
 
 </div>
 
@@ -86,12 +89,13 @@
 
 </body>
 
-<script src = "registrar.js"></script> 
-<script src = "pesquisar.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="conectareth.js"></script>
 <script src="abi.js"></script>
+<script src = "registrar.js"></script> 
+<script src = "pesquisar.js"></script>
 
 
 
