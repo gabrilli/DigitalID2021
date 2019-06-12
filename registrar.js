@@ -1,5 +1,5 @@
 
-var frm1 = document.cliente;
+var frm1 = document.formRegistro;
 
 function registrar () {
 
