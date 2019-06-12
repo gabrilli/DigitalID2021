@@ -3,7 +3,7 @@
         function pesquisar () {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
-            contract.gerarid (frm2.nome.value, frm2.CPF.value, frm2.Cel.value, frm1.identificador.value, function (erro, resultado) {
+            contract.gerarid (frm2.Nome.value, frm2.CPF.value, frm2.Cel.value, frm1.identificador.value, function (erro, resultado) {
                 if (erro) {
                     console.log("pesquisarcliente");
                     console.error(erro);
