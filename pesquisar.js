@@ -1,4 +1,5 @@
-var frm2 = document.cliente;
+
+        var frm = document.cliente;
         function pesquisar () {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
@@ -13,5 +14,6 @@ var frm2 = document.cliente;
                 $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
             })
         }
+
 
 
