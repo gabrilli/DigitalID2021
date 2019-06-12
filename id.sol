@@ -5,7 +5,7 @@ contract Digitalid {
     address payable Onwer;
     address Parceiro;
     
-   // colocaer na struct timestamp e block.
+   // colocar na struct timestamp e block.
     
        struct DigitalID {
        string Nome;
@@ -58,7 +58,7 @@ contract Digitalid {
         
         emit NovaID (Nome, CPF, Celular, Identificador);
         
-        Onwer.transfer(address(this).balance);
+        
         
         emit Publicar (Nome, CPF, Celular, Identificador, now, block.number);
         
