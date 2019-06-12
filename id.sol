@@ -3,10 +3,9 @@ pragma solidity 0.5.9;
 contract Digitalid {
     
     address payable Onwer;
-    //uint256 Valor;
     address Parceiro;
     
-   
+   // colocaer na struct timestamp e block.
     
        struct DigitalID {
        string Nome;
@@ -35,7 +34,6 @@ contract Digitalid {
     constructor (address payable _Onwer, address _Parceiro) 
         public {
             Onwer = _Onwer;
-           // Valor = _Valor;
             Parceiro = _Parceiro;
         }
     
