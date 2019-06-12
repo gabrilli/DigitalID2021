@@ -1,5 +1,5 @@
 
-        var frm = document.cliente;
+        var frm = document.formRegistro;
         function pesquisar () {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
