@@ -5,13 +5,14 @@ contract Digitalid {
     address payable Onwer;
     address Parceiro;
     
-   // colocar na struct timestamp e block.
-    
+   
        struct DigitalID {
        string Nome;
        uint256 CPF;
        uint256 Celular;
        bytes32 Identificador;
+       uint256 Timestamp;
+       uint256 Bloco;
     }
     
     DigitalID[] ListaClientesA;
@@ -26,7 +27,7 @@ contract Digitalid {
         _;
     }
     
-    event NovaID (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador);
+    event NovaID (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador,  uint256 Timestamp, uint256 Bloco);
     event VerificarID (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador);
     event Publicar (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador, uint256 Timestamp, uint256 Bloco);
    
@@ -40,14 +41,12 @@ contract Digitalid {
    
     function gerarid (string memory Nome, uint256 CPF, uint256 Celular, string memory Senha) public payable returns (bytes32) {
        
+    
        
-       //require (msg.value == Valor, "Pague o valor correto");
-       
-       
-       bytes32 Identificador = keccak256(abi.encode(Nome, CPF, Celular, Senha));
+       bytes32 Identificador = keccak256(abi.encode(Nome, Celular, CPF, Senha));
        
         
-        DigitalID memory Temp = DigitalID (Nome, CPF, Celular, Identificador);
+        DigitalID memory Temp = DigitalID (Nome, CPF, Celular, Identificador, now, block.number);
        
         ListaClientesA.push(Temp);
         ListaClientesM1[CPF] = Temp;
@@ -56,7 +55,7 @@ contract Digitalid {
         ListaClientesM4[Nome]=Temp;
             
         
-        emit NovaID (Nome, CPF, Celular, Identificador);
+        emit NovaID (Nome, CPF, Celular, Identificador, now, block.number);
         
         
         
@@ -64,8 +63,6 @@ contract Digitalid {
         
      
     }    
-        
-    
         
     
        
