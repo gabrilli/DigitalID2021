@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>ID Digital</title>
+<script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+<script>
+    function GerarCódigoDeBarras(elementoInput){
+        /*A função JsBarcode não aceita string vazia*/
+        if(!elementoInput.value){
+            elementoInput.value = 0;
+        }
+        JsBarcode('#codBarras', elementoInput.value);
+    }
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body onload="getLocation()">
+
+
+
+
+<h2>ID Digital</h2>
+<p>ID Digital criado na Blockchain da Ethereum</p>
+<p>Powered by Simões Advogados</p>
+
+<div>
+<h2>Nome: <span id = "nome"></span></h2>
+<p>CPF: <span id = "CPF"></span></p>
+<p> Hash-ID: <span id = "hash"></span></p>    
+<p>Geolocalização de Criação: <span id="geo"></span></p>
+<div>
+  <label>Digite um valor</label>
+  <input type="text" onblur="GerarCódigoDeBarras(this)"/>
+</div>
+<svg id="codBarras"></svg>  
+   
+</div>
+
+</div>
+<p>Timestamp de Criação: <span id="Timestamp"></span></p>
+</div>
+
+
+ //ver  https://github.com/lindell/JsBarcode/wiki/Options#format
+ //https://www.mundojs.com.br/2018/01/16/crie-codigo-de-barras-em-javascript-com-jsbarcode/
+
+
+
+</body>
+
+
+<script>
+
+var geo = document.getElementById("geo");
+
+function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        geo.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+      geo.innerHTML = "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude; 
+    }
+
+
+
+
+
+</script>
+
+
+
+</html>
