@@ -1,4 +1,5 @@
 const contractABI = [
+	
 	{
 		"constant": false,
 		"inputs": [
@@ -67,6 +68,16 @@ const contractABI = [
 				"indexed": false,
 				"name": "Identificador",
 				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "Bloco",
+				"type": "uint256"
 			}
 		],
 		"name": "NovaID",
@@ -161,6 +172,14 @@ const contractABI = [
 			{
 				"name": "Identificador",
 				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -192,6 +211,14 @@ const contractABI = [
 			{
 				"name": "Identificador",
 				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -223,6 +250,14 @@ const contractABI = [
 			{
 				"name": "Identificador",
 				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -254,12 +289,21 @@ const contractABI = [
 			{
 				"name": "Identificador",
 				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
 	}
+
 ]
 
 if (network === "4") {
