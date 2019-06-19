@@ -45,8 +45,9 @@ contract Digitalid {
        
        bytes32 Identificador = keccak256(abi.encode(Nome, Celular, CPF, Senha));
        
-        
-        DigitalID memory Temp = DigitalID (Nome, CPF, Celular, Identificador, now, block.number);
+        uint256 Timestamp = now;
+        uint256 Bloco = block.number;
+        DigitalID memory Temp = DigitalID (Nome, CPF, Celular, Identificador, Timestamp, Bloco);
        
         ListaClientesA.push(Temp);
         ListaClientesM1[CPF] = Temp;
@@ -55,11 +56,11 @@ contract Digitalid {
         ListaClientesM4[Nome]=Temp;
             
         
-        emit NovaID (Nome, CPF, Celular, Identificador, now, block.number);
+        emit NovaID (Nome, CPF, Celular, Identificador, Timestamp, Bloco);
         
         
         
-        emit Publicar (Nome, CPF, Celular, Identificador, now, block.number);
+        emit Publicar (Nome, CPF, Celular, Identificador, Timestamp, Bloco);
         
      
     }    
