@@ -1,5 +1,4 @@
 const contractABI = [
-	
 	{
 		"constant": false,
 		"inputs": [
@@ -81,33 +80,6 @@ const contractABI = [
 			}
 		],
 		"name": "NovaID",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "Nome",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "CPF",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"name": "Celular",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"name": "Identificador",
-				"type": "bytes32"
-			}
-		],
-		"name": "VerificarID",
 		"type": "event"
 	},
 	{
@@ -302,14 +274,118 @@ const contractABI = [
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "Celular",
+				"type": "uint256"
+			}
+		],
+		"name": "procurarporcelular",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Idetificador",
+				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "CPF",
+				"type": "uint256"
+			}
+		],
+		"name": "procurarporcpf",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Idetificador",
+				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			}
+		],
+		"name": "procurarporhash",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
-
 ]
 
 if (network === "4") {
-    contractAddress = "0x1edb096313010726969b99fd35cf307acd90076a"; 
+    contractAddress = "0x851d95caffddbb6db169fcd6e43b30d0d8980c15"; 
 } else {
-    contractAddress = "0x1edb096313010726969b99fd35cf307acd90076a"; 
+    contractAddress = "0x851d95caffddbb6db169fcd6e43b30d0d8980c15"; 
 }
 
 contract = web3.eth.contract(contractABI).at(contractAddress);
