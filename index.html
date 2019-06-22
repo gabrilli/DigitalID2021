@@ -95,8 +95,9 @@
 
 
 <button type="submit" class="btn btn-primary" onclick="registrar()">Registrar</button>
-<button type = "submit" class="btn btn-primary" onclick="pesquisar()">Pesquisar Cliente</button>
 <button  class="btn btn-primary" onclick= "geracao()">Gerar Documento</button>
+<button type = "submit" class="btn btn-primary" onclick="pesquisar()">Pesquisar Cliente</button>
+
  
 
 </div>
@@ -113,12 +114,17 @@
 <script src="conectareth.js"></script>
 <script src="abi.js"></script>
 <script src = "registrar.js"></script> 
-<script src = "pesquisar.js"></script>
-<script>
 
+<script>
 function geracao () {
     event.preventDefault ();
     window.open("popup.html")
+
+function pesquisar () {
+    event.preventDefault ();
+    window.open("pesquisar.html")
+    
+
 }
 </script>
 
