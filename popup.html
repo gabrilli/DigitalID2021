@@ -46,8 +46,7 @@
 
 <script>
 
-<script src="conectareth.js"></script>
-<script src="abi.js"></script>
+
 
 
     var geo = document.getElementById("geo");
@@ -66,8 +65,8 @@
       JsBarcode('#codBarras1', position.coords.latitude)
       JsBarcode('#codBarras2', position.coords.longitude)
     }
-    
-        function pesquisar (frm1.CPF.value) {
+    var frm2 = document.formRegistro;
+        function pesquisar () {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
             contract.procurarporcpf (frm2.Nome.value, frm2.Cel.value, frm2.Identificador.value, frm2.Timestamp.value, frm2.Bloco.value, function (erro, resultado) {
