@@ -66,8 +66,8 @@
       JsBarcode('#codBarras1', position.coords.latitude)
       JsBarcode('#codBarras2', position.coords.longitude)
     }
-    var frm2 = document.formRegistro;
-        function pesquisar () {
+    
+        function pesquisar (frm1.CPF.value) {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
             contract.procurarporcpf (frm2.Nome.value, frm2.Cel.value, frm2.Identificador.value, frm2.Timestamp.value, frm2.Bloco.value, function (erro, resultado) {
