@@ -10,16 +10,16 @@
 </head>
 
 <body onload="getLocation()">
-
+<script> var frm1 = document.formRegistro </script>
 
 <h2>ID Digital</h2>
 <p>ID Digital criado na Blockchain da Ethereum</p>
 <p>Powered by Simões Advogados</p>
 
 <div>
-<h2>Nome: <span id = "nome"></span></h2>
-<p>CPF: <span id = "CPF"></span></p>
-<p> Hash-ID: <span id = "hash"></span></p>    
+<h2>Nome: <span id = "frm1.Nome.value"></span></h2>
+<p>CPF: <span id = "frm1.CPF.value"></span></p>
+<p> Hash-ID: <span id = "procurarporcpf[2]"></span></p>    
 <p>Geolocalização de Criação: <span id="geo"></span></p>
 
 <div>
@@ -35,17 +35,22 @@
 <svg id="codBarras2"></svg>
 
 
-<p>Timestamp de Criação: <span id="Timestamp"></span></p>
+<p>Timestamp de Criação: <span id="procurarporcpf[3]"></span></p>
+<p>Bloco de Criação: <span id="procurarporcpf[4]"></span></p>
 </div>
 
 
 </body>
 
 
+
 <script>
 
-    var geo = document.getElementById("geo");
+<script src="conectareth.js"></script>
+<script src="abi.js"></script>
 
+
+    var geo = document.getElementById("geo");
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -53,16 +58,29 @@
         geo.innerHTML = "Geolocation is not supported by this browser.";
       }
     }
-        
+     
+    
     function showPosition(position) {
       geo.innerHTML = "Latitude: " + position.coords.latitude + 
       "<br>Longitude: " + position.coords.longitude; 
       JsBarcode('#codBarras1', position.coords.latitude)
       JsBarcode('#codBarras2', position.coords.longitude)
     }
-
-
- 
+    var frm2 = document.formRegistro;
+        function pesquisar () {
+            event.preventDefault();
+            $("#resultadoPesquisa").html("");
+            contract.procurarporcpf (frm2.Nome.value, frm2.Cel.value, frm2.Identificador.value, frm2.Timestamp.value, frm2.Bloco.value, function (erro, resultado) {
+                if (erro) {
+                    console.log("pesquisarcliente");
+                    console.error(erro);
+                    alert("Houve um erro ao pesquisar o nome do cliente");
+                    return
+                }
+                $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
+            })
+        }
+    
 
 
 </script>
