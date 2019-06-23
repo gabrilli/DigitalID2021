@@ -19,7 +19,7 @@
 <p>Powered by Simões Advogados</p>
 
 <div>
-<h2>Nome: <onload= span id = "document.frm1.Nome.value"></span></h2>
+<h2>Nome: <span id = "document.frm1.Nome.value"></span></h2>
 <p>CPF: <span id = "document.frm1.CPF.value"></span></p>
 <p> Hash-ID: <span id = "resultado[2]"></span></p>    
 <p>Geolocalização de Criação: <span id="geo"></span></p>
@@ -71,12 +71,13 @@
             $("#resultadoPesquisa").html("");
             contract.procurarporcpf (frm1.CPF.value, function (erro, resultado) {
                 if (erro) {
-                    console.log("pesquisarcliente");
+                    console.log("pesquisar");
                     console.error(erro);
                     alert("Houve um erro ao pesquisar o nome do cliente");
                     return
                 }
-                //$("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
+              $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
+                
             })
         }
     
