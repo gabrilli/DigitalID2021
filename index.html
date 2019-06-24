@@ -29,6 +29,10 @@
 
 <body>
 
+    <body onload="getLocation()">
+    <body onload="getIP()">  
+         
+
     <div class="jumbotron text-center">
         <h1>Crie sua primeira ID Digital na Blockchain da Ethereum!</h1>
         <p>É totalmente gratuito e você poderá utilizá-la em qualquer lugar</p> 
@@ -77,28 +81,25 @@
             <div>
             <label for="Cel">Celular</label>:
             <input type="number" name="Celular"
-            id="Celular" size=50 maxlenght=100
+            id="Celular" size=50 maxlenght=300
             placeholder="Inserir celular com DDD (só números)" />
             </div>
-<br/>
-<br/>
+            <div>
+                <p> <span id="geo1"></span></p>
+                <p> <span id="geo2"></span></p>
+                <p> <span id="ip"></span></p>
+            </div>
 
             <div>
             <label for="Senha">Senha</label>:
             <input type="password" name="Senha"
             id="Senha" size=50 maxlenght=100
             placeholder="Digite sua senha (maximo de 100 caracteres)" />
-            </div>
-
-<br/>
-<br/>        
-
+           </div>
+<br/>             
 
 <button type="submit" class="btn btn-primary" onclick="registrar()">Registrar</button>
 <button  class="btn btn-primary" onclick= "geracao()">Gerar Documento</button>
-
- 
-
 </div>
 
 </form>
@@ -107,7 +108,6 @@
  </div>
 </body>
 	
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="conectareth.js"></script>
@@ -128,7 +128,7 @@ function registrar () {
 event.preventDefault();
 
 $("#statusTransacao").html("&nbsp;");
-contract.gerarid (frm1.Nome.value, frm1.CPF.value, frm1.Celular.value, frm1.Senha.value, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
+contract.gerarid (frm1.Nome.value, frm1.CPF.value, frm1.Celular.value, id=geo1, id=geo2, id=ip, frm1.Senha.value, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
     if (erro) {
         console.log("registrar");
         console.error(erro);
@@ -139,5 +139,32 @@ contract.gerarid (frm1.Nome.value, frm1.CPF.value, frm1.Celular.value, frm1.Senh
 });
 }
 </script>
+
+<script>
+var geo = document.getElementById("geo");
+function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        geo.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+        
+function showPosition(position) {
+geo1.innerHTML = "<br>Latitude: " + position.coords.latitude;
+geo2.innerHTML = "<br>Longitude: " + position.coords.longitude;} 
+ 
+</script>
+
+
+<script type="application/javascript">
+  var ip = document.getElementById("ip");
+  function getIP(json) {
+    ip.innerHTML = "<br>IP: " + json.ip;
+  
+  }
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 </html>
