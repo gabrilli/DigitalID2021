@@ -3,7 +3,7 @@ pragma solidity 0.5.9;
 contract Digitalid {
     
     address payable Onwer;
-    address Parceiro;
+   // address Parceiro;
     
    
        struct DigitalID {
@@ -13,9 +13,15 @@ contract Digitalid {
        bytes32 Identificador;
        uint256 Timestamp;
        uint256 Bloco;
+       string Latitude;
+       string Longitude;
+       string IP;
+       
+       
     }
     
     DigitalID[] ListaClientesA;
+    /*
     mapping (uint256 => DigitalID) public ListaClientesM1;
     mapping (bytes32 => DigitalID) public ListaClientesM2;
     mapping (uint256 => DigitalID) public ListaClientesM3;
@@ -26,39 +32,58 @@ contract Digitalid {
         require (msg.sender == Onwer, "Operação exclusiva da Empresa");
         _;
     }
+    */
+    event NovaID (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador,  uint256 Timestamp, uint256 Bloco, string Latitude, string Longitude, string IP);
+    /*event Publicar (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador, uint256 Timestamp, uint256 Bloco, string Latitude, string Longitude, string IP);
+   */
     
-    event NovaID (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador,  uint256 Timestamp, uint256 Bloco);
-    event Publicar (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador, uint256 Timestamp, uint256 Bloco);
-   
-    
-    constructor (address payable _Onwer, address _Parceiro) 
+    constructor (address payable _Onwer) 
         public {
             Onwer = _Onwer;
-            Parceiro = _Parceiro;
+            //Parceiro = _Parceiro;
         }
     
    
-    function gerarid (string memory Nome, uint256 CPF, uint256 Celular, string memory Senha) public payable returns (bytes32) {
+    function gerarid (string memory Nome, uint256 CPF, uint256 Celular, string memory Latitude, string memory Longitude, string memory IP, string memory Senha) public  returns (bytes32) {
        
-           bytes32 Identificador = keccak256(abi.encode(CPF, Senha));
-       
+        bytes32 Identificador = keccak256(abi.encode(CPF, Senha));
         uint256 Timestamp = now;
         uint256 Bloco = block.number;
-        DigitalID memory Temp = DigitalID (Nome, CPF, Celular, Identificador, Timestamp, Bloco);
+        
+       
+        DigitalID memory Temp = DigitalID (Nome, CPF, Celular, Identificador, Timestamp, Bloco, Latitude, Longitude, IP);
        
         ListaClientesA.push(Temp);
-        ListaClientesM1[CPF] = Temp;
+        /*ListaClientesM1[CPF] = Temp;
         ListaClientesM2[Identificador]=Temp;
         ListaClientesM3[Celular]=Temp;
-        ListaClientesM4[Nome]=Temp;
+        ListaClientesM4[Nome]=Temp;*/
             
         
-        emit NovaID (Nome, CPF, Celular, Identificador, Timestamp, Bloco);
-        emit Publicar (Nome, CPF, Celular, Identificador, Timestamp, Bloco);
-        
-     
-    }    
+        emit NovaID (Nome, CPF, Celular, Identificador, Timestamp, Bloco, Latitude, Longitude, IP);
+        /*emit Publicar (Nome, CPF, Celular, Identificador, Timestamp, Bloco, Latitude, Longitude, IP);*/
+    }
+    //                                                                          Nome        CPF     Celular   latitude       Longitude      IP 
+   
+    function imprimirid (uint CPF, string memory Senha) public view returns (string memory, uint256, uint256, bytes32 Identificador, uint256 Timestamp, uint256 Bloco, string memory Latitude, string memory Longitude, string memory IP) {
     
+        
+    bytes32 S = keccak256(abi.encode(CPF, Senha));
+    
+    
+    
+     uint x;
+    
+    for (x=0; x<ListaClientesA.length; x++) {
+        
+        if (S == ListaClientesA[x].Identificador) {
+            return (ListaClientesA[x].Nome, ListaClientesA[x].CPF, ListaClientesA[x].Celular, ListaClientesA[x].Identificador, ListaClientesA[x].Timestamp, ListaClientesA[x].Bloco, ListaClientesA[x].Latitude, ListaClientesA[x].Longitude, ListaClientesA[x].IP);
+        }
+        
+        
+    }
+    }  
+
     function procurarporcpf (uint CPF) public view returns (string memory Nome, uint Celular, bytes32 Idetificador, uint Timestamp, uint Bloco) {    
     
     uint x;
@@ -72,8 +97,8 @@ contract Digitalid {
     }
     
     }
-    
-    function procurarporhash (bytes32 Identificador) public view returns (string memory Nome, uint Celular, uint CPF, uint Timestamp, uint Bloco) {    
+    /*
+    function procurarporidentificador (bytes32 Identificador) public view returns (string memory Nome, uint Celular, uint CPF, uint Timestamp, uint Bloco) {    
     
     uint x;
     
@@ -99,6 +124,6 @@ contract Digitalid {
     }
     } 
    
-     
+     */
         
 }
