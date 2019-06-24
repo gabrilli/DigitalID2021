@@ -1,1 +1,2 @@
 solidity ok
+abi ok
