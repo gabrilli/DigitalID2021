@@ -38,15 +38,15 @@
         <div class="row">
           <div class="col-sm-4">
             <h3>Primeiro Passo</h3>
-            <p>Basta inserir os dados requisitados para obter seu hash personalizado!</p>
+            <p>Basta inserir os dados requisitados para obter sua ID!</p>
           </div>
           <div class="col-sm-4">
             <h3>Segundo Passo</h3>
-            <p>Clique em registrar</p>
+            <p>Clique em registrar.</p>
           </div>
           <div class="col-sm-4">
             <h3>Terceiro Passo</h3> 
-            <p>Gere seu documento</p>
+            <p>Utilize seu CPF e senha para obter seu documento.</p>
           </div>
         </div>
       </div>
@@ -96,7 +96,6 @@
 
 <button type="submit" class="btn btn-primary" onclick="registrar()">Registrar</button>
 <button  class="btn btn-primary" onclick= "geracao()">Gerar Documento</button>
-<button type = "submit" class="btn btn-primary" onclick="pesquisar()">Pesquisar Cliente</button>
 
  
 
@@ -113,22 +112,32 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="conectareth.js"></script>
 <script src="abi.js"></script>
-<script src = "registrar.js"></script> 
+
 
 <script>
 function geracao () {
     event.preventDefault ();
     window.open("popup.html")}
-
-function pesquisar () {
-    event.preventDefault ();
-    window.open("pesquisar.html")
-    
-
-}
 </script>
 
+<script>
+var frm1 = document.formRegistro;
 
+function registrar () {
 
+event.preventDefault();
+
+$("#statusTransacao").html("&nbsp;");
+contract.gerarid (frm1.Nome.value, frm1.CPF.value, frm1.Celular.value, frm1.Senha.value, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
+    if (erro) {
+        console.log("registrar");
+        console.error(erro);
+        alert("Houve um erro ao registrar esse cliente");
+        return
+    }
+    waitForTxToBeMined(resultado, "#statusTransacao");
+});
+}
+</script>
 
 </html>
