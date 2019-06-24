@@ -63,7 +63,7 @@
             <div>
             <label for="Nome">Nome</label>:
             <input type="text" name="Nome"
-             id="Nome" size=50 maxlenght=100
+             id="Nome" size=100 maxlenght=100
              placeholder="Inserir nome completo" />
             </div> 
 <br/>
@@ -72,16 +72,13 @@
             <div>             
             <label for="CPF">CPF</label>:
             <input type="number" name="CPF"
-            id="CPF" size=50 maxlenght=100
+            id="CPF" size=100 maxlenght=100
             placeholder="Inserir CPF (somente números)" />
             </div>
-<br/>
-<br/>
-
             <div>
             <label for="Cel">Celular</label>:
             <input type="number" name="Celular"
-            id="Celular" size=50 maxlenght=300
+            id="Celular" size=100 maxlenght=100
             placeholder="Inserir celular com DDD (só números)" />
             </div>
             <div>
@@ -128,8 +125,8 @@ function registrar () {
 event.preventDefault();
 
 $("#statusTransacao").html("&nbsp;");
-contract.gerarid (frm1.Nome.value, frm1.CPF.value, frm1.Celular.value, frm1.geo1.value, frm1.geo2.value, 
-frm1.ip.value, frm1.Senha.value, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
+contract.gerarid (frm1.Nome.value, frm1.CPF.value, frm1.Celular.value, geo1.innerHTML, geo2.innerHTML, 
+ip.innerHTML, frm1.Senha.value, {from: web3.eth.accounts[0], gas: 3000000, value: 0}, function (erro, resultado) {
     if (erro) {
         console.log("registrar");
         console.error(erro);
