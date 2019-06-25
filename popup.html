@@ -7,7 +7,8 @@
 <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="conectareth.js"></script>
+<script src="abi.js"></script>
 
 </head>
 <body>
@@ -46,14 +47,13 @@
 <p>Powered by Simões Advogados</p>
 
 <div>
-  <div id="resultadoPesquisa"></div>
 <div>
-  
-  
+ <div id="resultadoPesquisa"></div>
+
   </div>
    <div id="imprimir">
     <form action="#" method="GET" name="frmid" id="frmid">
-     
+      <div>
         <label for="Nome">Nome:</label>: <input type="text" name="Nome"  id="Nome"/>
         <label for="CPF">CPF:</label>:  <input type="number" name="CPF"  id="CPF"/>
         <label for="Celular">Celular:</label>: <input type="number" name="Celular"id="Celular"/>  
@@ -64,13 +64,10 @@
         <label for="Longitude">Longitude:</label>: <input type="text" name="Longitude"  id="Longitude"/>
         <label for="IP">Longitude:</label>: <input type="text" name="IP"  id="IP"/>
         <br>
-      </div>
 
 
 
 <div>
-  
-
   
   <onblur="GerarCódigoDeBarras1(this)"/>
 </div>
