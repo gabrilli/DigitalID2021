@@ -67,20 +67,6 @@
 
 
 
-<div>
-  
-  <onblur="GerarCódigoDeBarras1(this)"/>
-</div>
-<svg id="codBarras1"></svg>
-
-<div>
-  
-  <onblur="GerarCódigoDeBarras2(this)"/>
-</div>
-<svg id="codBarras2"></svg>
-
-
-
 
 </body>
 
@@ -109,25 +95,6 @@
     }
 </script>
 
-/*
-    var geo = document.getElementById("geo");
 
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        geo.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-        
-    function showPosition(position) {
-      geo.innerHTML = "Latitude: " + position.coords.latitude + 
-      "<br>Longitude: " + position.coords.longitude; 
-      JsBarcode('#codBarras1', position.coords.latitude)
-      JsBarcode('#codBarras2', position.coords.longitude)
-    }
-    */
-
-    
 
 </html>
