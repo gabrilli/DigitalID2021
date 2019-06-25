@@ -90,11 +90,13 @@
                 frmid.IP.value = "";
                 return
             }
-            $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
+            $("#resultadoPesquisa").html("Nome: " + resultado[0] + "<br>CPF: " + resultado[1] + "<br>Celular: " + resultado[2]+
+                                        "Identificador: " + resultado[3] + "<br>Timestamp: " + resultado[4] + "<br>Bloco: " + resultado[5] +
+                                        "<br>Latitude: " + resultado[6] + "<br>Longitude: " + resultado[7] + "<br>IP: " + resultado[8]);
         })
     }
 </script>
 
-
+ 
 
 </html>
