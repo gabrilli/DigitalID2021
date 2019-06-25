@@ -5,7 +5,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="conectareth.js"></script>
+<script src="abi.js"></script>
 
 </head>
 <body>
@@ -33,18 +36,19 @@
   </form> 
   <hr>  
   <script>
-  var frm1 = document.formimprimirid;
-        function imprimirid () {
+   var frm2 = document.formimprimirid;
+        function imprimirid() {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
-            contract.imprimirid (frm1.CPF.value, frm1.Senha.value, function (erro, resultado) {
+            contract.imprimirid(frm1.CPF.value, frm1.Senha.value, function (erro, resultado) {
                 if (erro) {
-                    console.log("pesquisarcliente");
+                    console.log("pesquisarImovel");
                     console.error(erro);
-                    alert("Houve um erro ao pesquisar o nome do cliente");
+                    alert("Houve um erro ao pesquisar o nome do proprietário");
+                    frmPesquisa.matricula.value = "";
                     return
                 }
-                $("#resultadoPesquisa").html ("O proprietário do imóvel informado é: " + resultado);
+                $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
             })
         }
     </script>
@@ -82,12 +86,7 @@
 </body>
 
 
-<script>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="connectToSmartContract.js"></script>
-    <script src="abi.js"></script>
+
 /*
     var geo = document.getElementById("geo");
 
