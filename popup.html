@@ -25,18 +25,20 @@
       </br>
       </br>
       <label for="Senha">Senha</label>:
-      <input type="text" name="Senha"
+      <input type="password" name="Senha"
        id="Senha" size=100 maxlenght=100
        placeholder="Senha" />
 <br>
+
 
 <button  class="btn btn-primary" onclick= "imprimirid()">Gerar Documento</button>
       </div> 
       
   </form> 
   <hr>  
-  <script>
-   var frm2 = document.formimprimirid;
+  
+    <script>
+        var frm2 = document.formimprimirid;
         function imprimirid() {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
@@ -45,10 +47,19 @@
                     console.log("pesquisarImovel");
                     console.error(erro);
                     alert("Houve um erro ao pesquisar o nome do proprietário");
-                    frmPesquisa.matricula.value = "";
+                    frmid.Nome.value = "";
+                    frmid.CPF.value = "";
+                    frmid.Identificador.value = "";
+                    frmid.Timestamp.value = "";
+                    frmid.Bloco.value = "";
+                    frmid.Latitude.value = "";
+                    frmid.Longitude.value = "";
+                    frmid.IP.value = "";
+
+
                     return
                 }
-                $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado[0]);
+                $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
             })
         }
     </script>
@@ -58,10 +69,21 @@
 <p>Powered by Simões Advogados</p>
 
 <div>
-<h2>Nome: <span id = "formRegistro.Nome.value"></span></h2>
-<p>CPF: <span id = "formRegistro.CPF.value"></span></p>
-<p> Hash-ID: <span id = "resultado[2]"></span></p>    
-<p>Geolocalização de Criação: <span id="geo"></span></p>
+
+    <form action="#" method="GET" name="frmid" id="frmid">
+      <div>
+        <label for="Nome">Nome:</label>: <input type="text" name="Nome"  id="Nome"/>
+        <label for="CPF">CPF:</label>:  <input type="number" name="CPF"  id="CPF"/>
+        <label for="Celular">Celular:</label>: <input type="number" name="Celular"id="Celular"/>  
+        <label for="Identificador">Identificador:</label>: <input type="text" name="Identificador"  id="Identificador"/>
+        <label for="Timestamp">Timestamp:</label>: <input type="number" name="Timestamp"  id="Timestamp"/>
+        <label for="Bloco">Bloco:</label>: <input type="number" name="Bloco"  id="Bloco"/>
+        <label for="Latitude">Latitude:</label>:  <input type="text" name="Latitude"  id="Latitude"/>
+        <label for="Longitude">Longitude:</label>: <input type="text" name="Longitude"  id="Longitude"/>
+        <label for="IP">Longitude:</label>: <input type="text" name="IP"  id="IP"/>
+        <br>
+
+
 
 <div>
   
@@ -76,9 +98,6 @@
 <svg id="codBarras2"></svg>
 
 
-<p>Timestamp de Criação: <span id="#resultadoPesquisa[3]"></span></p>
-<p>Bloco de Criação: <span id="#resultadoPesquisa[4]"></span></p>
-</div>
 
 
 </body>
