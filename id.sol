@@ -33,7 +33,9 @@ contract Digitalid {
         _;
     }
     */
-    event NovaID (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador,  uint256 Timestamp, uint256 Bloco, string Latitude, string Longitude, string IP);
+    event NovaID (string Nome, uint256 CPF, uint256 Celular, 
+    bytes32 Identificador,  uint256 Timestamp, uint256 Bloco, 
+    string Latitude, string Longitude, string IP);
     /*event Publicar (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador, uint256 Timestamp, uint256 Bloco, string Latitude, string Longitude, string IP);
    */
     
@@ -44,14 +46,17 @@ contract Digitalid {
         }
     
    
-    function gerarid (string memory Nome, uint256 CPF, uint256 Celular, string memory Latitude, string memory Longitude, string memory IP, string memory Senha) public  returns (bytes32) {
+    function gerarid (string memory Nome, uint256 CPF, 
+    uint256 Celular, string memory Latitude, string memory Longitude, 
+    string memory IP,string memory Senha) public  returns (bytes32) {
        
         bytes32 Identificador = keccak256(abi.encode(CPF, Senha));
         uint256 Timestamp = now;
         uint256 Bloco = block.number;
         
        
-        DigitalID memory Temp = DigitalID (Nome, CPF, Celular, Identificador, Timestamp, Bloco, Latitude, Longitude, IP);
+        DigitalID memory Temp = DigitalID (Nome, CPF, Celular, Identificador, 
+        Timestamp, Bloco, Latitude, Longitude, IP);
        
         ListaClientesA.push(Temp);
         /*ListaClientesM1[CPF] = Temp;
@@ -60,22 +65,33 @@ contract Digitalid {
         ListaClientesM4[Nome]=Temp;*/
             
         
-        emit NovaID (Nome, CPF, Celular, Identificador, Timestamp, Bloco, Latitude, Longitude, IP);
+        emit NovaID (Nome, CPF, Celular, Identificador, 
+        Timestamp, Bloco, Latitude, Longitude, IP);
         /*emit Publicar (Nome, CPF, Celular, Identificador, Timestamp, Bloco, Latitude, Longitude, IP);*/
     }
-   
-   
-    function imprimirid (uint CPF, string memory Senha) public view returns (string memory, uint, uint, bytes32, uint, uint, string memory, string memory, string memory) {
-    
-        
+                                                                             
+    function imprimirid (uint CPF, string memory Senha) public view returns (string memory,
+       uint256,
+       uint256,
+       bytes32,
+       uint256,
+       uint256,
+       string memory,
+       string memory,
+       string memory) {
+            
     bytes32 S = keccak256(abi.encode(CPF, Senha));
-    
+       
      uint x;
     
     for (x=0; x<ListaClientesA.length; x++) {
         
         if (S == ListaClientesA[x].Identificador) {
-            return (ListaClientesA[x].Nome, ListaClientesA[x].CPF, ListaClientesA[x].Celular, ListaClientesA[x].Identificador, ListaClientesA[x].Timestamp, ListaClientesA[x].Bloco, ListaClientesA[x].Latitude, ListaClientesA[x].Longitude, ListaClientesA[x].IP);
+            return (ListaClientesA[x].Nome, ListaClientesA[x].CPF, 
+            ListaClientesA[x].Celular, ListaClientesA[x].Identificador, 
+            ListaClientesA[x].Timestamp, ListaClientesA[x].Bloco, 
+            ListaClientesA[x].Latitude, ListaClientesA[x].Longitude, 
+            ListaClientesA[x].IP);
         }
         
         
