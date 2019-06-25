@@ -132,27 +132,27 @@ const contractABI = [
 				"type": "uint256"
 			},
 			{
-				"name": "Identificador",
+				"name": "",
 				"type": "bytes32"
 			},
 			{
-				"name": "Timestamp",
+				"name": "",
 				"type": "uint256"
 			},
 			{
-				"name": "Bloco",
+				"name": "",
 				"type": "uint256"
 			},
 			{
-				"name": "Latitude",
+				"name": "",
 				"type": "string"
 			},
 			{
-				"name": "Longitude",
+				"name": "",
 				"type": "string"
 			},
 			{
-				"name": "IP",
+				"name": "",
 				"type": "string"
 			}
 		],
@@ -179,7 +179,7 @@ const contractABI = [
 				"type": "uint256"
 			},
 			{
-				"name": "Idetificador",
+				"name": "Identificador",
 				"type": "bytes32"
 			},
 			{
@@ -199,9 +199,9 @@ const contractABI = [
       
       
 if (network === "4") {
-    contractAddress = "0x9894af2c744a0e35f560c146da4078d95fdfe61f"; 
+    contractAddress = "0x335d0a83fa94be21d736ba01e6d64f17e85d958d"; 
 } else {
-    contractAddress = "0x9894af2c744a0e35f560c146da4078d95fdfe61f"; 
+    contractAddress = "0x335d0a83fa94be21d736ba01e6d64f17e85d958d"; 
 }
 
 contract = web3.eth.contract(contractABI).at(contractAddress);
