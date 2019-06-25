@@ -79,23 +79,18 @@
               placeholder="Inserir celular com DDD (só números)" />
             </div>
             <div>             
-              <label for="IP">IP: (protegido por segurança)</label>:
-              <input type="text" name="IP"  id="ip"/>
-            </div>
-            <div>             
               <label for="Latitude">Latitude: (protegido por segurança)</label>:
               <input type="text" name="Latitude" id="Latitude"/>
             </div>
             <div>             
               <label for="Longitude">Longitude: (protegido por segurança)</label>:
               <input type="text" name="Longitude" id="Longitude"/>
-            </div>                      
-            <div>
-              <p> <span id="geo1"></span></p>
-              <p> <span id="geo2"></span></p>
-              <p> <span id="ip"></span></p>
-            </br>
-            </div>
+            </div> 
+	     <div>             
+              <label for="IP">IP: (protegido por segurança)</label>:
+              <input type="text" name="IP"  id="IP"/>
+            </div> 
+              
 
             <div>
               <label for="Senha">Senha</label>:
@@ -103,7 +98,14 @@
               id="Senha" size=50 maxlenght=100
               placeholder="Digite sua senha (maximo de 100 caracteres)" />
             </div>
-    <br/>             
+    <br/> 
+	      <div>
+              <p> <span id="geo1"></span></p>
+              <p> <span id="geo2"></span></p>
+              <p> <span id="ip"></span></p>
+            </br>
+            </div>  
+	      
 
 <button type="submit" class="btn btn-primary" onclick="registrar()">Registrar</button>
 <button  class="btn btn-primary" onclick= "geracao()">Gerar Documento</button>
