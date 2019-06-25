@@ -30,7 +30,8 @@
        id="Senha" size=100 maxlenght=100
        placeholder="Senha" />
   </div>
-       
+
+  
 <br>
 
 <div>
@@ -39,30 +40,7 @@
 </form> 
 <hr>  
   
-    <script>
-        var frm2 = document.formimprimirid;
-        function imprimirid() {
-            event.preventDefault();
-            $("#resultadoPesquisa").html("");
-            contract.imprimirid(frm2.CPF.value, frm2.Senha.value, function (erro, resultado) {
-                if (erro) {
-                    console.log("pesquisarImovel");
-                    console.error(erro);
-                    alert("Houve um erro ao pesquisar o nome do proprietário");
-                    frmid.Nome.value = "";
-                    frmid.CPF.value = "";
-                    frmid.Identificador.value = "";
-                    frmid.Timestamp.value = "";
-                    frmid.Bloco.value = "";
-                    frmid.Latitude.value = "";
-                    frmid.Longitude.value = "";
-                    frmid.IP.value = "";
-                    return
-                }
-                $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
-            })
-        }
-    </script>
+  
 
 <h2>ID Digital</h2>
 <p>ID Digital criado na Blockchain da Ethereum</p>
@@ -106,7 +84,30 @@
 
 </body>
 
-
+<script>
+    var frm2 = document.formimprimirid;
+    function imprimirid() {
+        event.preventDefault();
+        $("#resultadoPesquisa").html("");
+        contract.imprimirid(frm2.CPF.value, frm2.Senha.value, function (erro, resultado) {
+            if (erro) {
+                console.log("pesquisarImovel");
+                console.error(erro);
+                alert("Houve um erro ao pesquisar o nome do proprietário");
+                frmid.Nome.value = "";
+                frmid.CPF.value = "";
+                frmid.Identificador.value = "";
+                frmid.Timestamp.value = "";
+                frmid.Bloco.value = "";
+                frmid.Latitude.value = "";
+                frmid.Longitude.value = "";
+                frmid.IP.value = "";
+                return
+            }
+            $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
+        })
+    }
+</script>
 
 /*
     var geo = document.getElementById("geo");
@@ -128,9 +129,5 @@
     */
 
     
-
-</script>
-
-
 
 </html>
