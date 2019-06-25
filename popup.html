@@ -92,6 +92,12 @@
     }
 </script>
 
+      function showPosition(position) {
+      geo.innerHTML = "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude; 
+      JsBarcode('#codBarras1', position.coords.latitude)
+      JsBarcode('#codBarras2', position.coords.longitude)
+    }
  
 
 </html>
