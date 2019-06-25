@@ -40,4 +40,4 @@ function waitForTxToBeMined(txHash, objStatus) {
             window.setTimeout(waitForTxToBeMined, 1500, txHash, objStatus);
         }
     });
-} 
+}
