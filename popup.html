@@ -40,7 +40,7 @@
         function imprimirid() {
             event.preventDefault();
             $("#resultadoPesquisa").html("");
-            contract.imprimirid(frm1.CPF.value, frm1.Senha.value, function (erro, resultado) {
+            contract.imprimirid(frm2.CPF.value, frm2.Senha.value, function (erro, resultado) {
                 if (erro) {
                     console.log("pesquisarImovel");
                     console.error(erro);
@@ -48,13 +48,11 @@
                     frmPesquisa.matricula.value = "";
                     return
                 }
-                $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
+                $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado[0]);
             })
         }
     </script>
-</body>
 
-<body>
 <h2>ID Digital</h2>
 <p>ID Digital criado na Blockchain da Ethereum</p>
 <p>Powered by Simões Advogados</p>
