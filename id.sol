@@ -63,14 +63,12 @@ contract Digitalid {
         emit NovaID (Nome, CPF, Celular, Identificador, Timestamp, Bloco, Latitude, Longitude, IP);
         /*emit Publicar (Nome, CPF, Celular, Identificador, Timestamp, Bloco, Latitude, Longitude, IP);*/
     }
-    //                                                                          Nome        CPF     Celular   latitude       Longitude      IP 
    
-    function imprimirid (uint CPF, string memory Senha) public view returns (string memory, uint256, uint256, bytes32 Identificador, uint256 Timestamp, uint256 Bloco, string memory Latitude, string memory Longitude, string memory IP) {
+   
+    function imprimirid (uint CPF, string memory Senha) public view returns (string memory, uint, uint, bytes32, uint, uint, string memory, string memory, string memory) {
     
         
     bytes32 S = keccak256(abi.encode(CPF, Senha));
-    
-    
     
      uint x;
     
@@ -84,7 +82,7 @@ contract Digitalid {
     }
     }  
 
-    function procurarporcpf (uint CPF) public view returns (string memory Nome, uint Celular, bytes32 Idetificador, uint Timestamp, uint Bloco) {    
+    function procurarporcpf (uint CPF) public view returns (string memory Nome, uint Celular, bytes32 Identificador, uint Timestamp, uint Bloco) {    
     
     uint x;
     
