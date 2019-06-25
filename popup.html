@@ -8,12 +8,49 @@
 
 
 </head>
+<body>
+<br>  
+<div id = "cliente">
 
-<body onload="getLocation()">
-<body onload = "pesquisar()">
+  <form action="#" method="POST" name="formimprimirid" id="formimprimirid">
+     
+      <div>
+      <label for="CPF">CPF</label>:
+      <input type="text" name="CPF"
+       id="CPF" size=100 maxlenght=100
+       placeholder="CPF" />
+      </br>
+      </br>
+      <label for="Senha">Senha</label>:
+      <input type="text" name="Senha"
+       id="Senha" size=100 maxlenght=100
+       placeholder="Senha" />
+<br>
 
+<button  class="btn btn-primary" onclick= "imprimirid()">Gerar Documento</button>
+      </div> 
+      
+  </form> 
+  <hr>  
+  <script>
+  var frm1 = document.formimprimirid;
+        function imprimirid () {
+            event.preventDefault();
+            $("#resultadoPesquisa").html("");
+            contract.imprimirid (frm1.CPF.value, frm1.Senha.value, function (erro, resultado) {
+                if (erro) {
+                    console.log("pesquisarcliente");
+                    console.error(erro);
+                    alert("Houve um erro ao pesquisar o nome do cliente");
+                    return
+                }
+                $("#resultadoPesquisa").html ("O proprietário do imóvel informado é: " + resultado);
+            })
+        }
+    </script>
+</body>
 
-
+<body>
 <h2>ID Digital</h2>
 <p>ID Digital criado na Blockchain da Ethereum</p>
 <p>Powered by Simões Advogados</p>
@@ -51,7 +88,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="connectToSmartContract.js"></script>
     <script src="abi.js"></script>
-
+/*
     var geo = document.getElementById("geo");
 
     function getLocation() {
@@ -68,23 +105,8 @@
       JsBarcode('#codBarras1', position.coords.latitude)
       JsBarcode('#codBarras2', position.coords.longitude)
     }
-    
-    var frm2 = document.formRegistro;
-        function pesquisar () {
-            event.preventDefault();
-            $("#resultadoPesquisa").html("");
-            contract.procurarporcpf (frm2.CPF.value, function (erro, resultado) {
-                if (erro) {
-                    console.log("pesquisarcliente");
-                    console.error(erro);
-                    alert("Houve um erro ao pesquisar o nome do cliente");
-                    //frmPesquisa.matricula.value = "";
-                    return
-                }
-                $("#resultadoPesquisa").html ("O proprietário do imóvel informado é: " + resultado);
-            })
-        }
-        //function procurarporcpf (uint CPF) public view returns (string memory Nome, uint Celular, bytes32 Idetificador, uint Timestamp, uint Bloco) {    
+    */
+
     
 
 </script>
