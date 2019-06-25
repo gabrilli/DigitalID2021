@@ -195,13 +195,14 @@ const contractABI = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
-      
+]   
       
 if (network === "4") {
-    contractAddress = "0x335d0a83fa94be21d736ba01e6d64f17e85d958d"; 
+    contractAddress = "0x400f9c8391848041a181b4ef9351262db23cd2e9
+"; 
 } else {
-    contractAddress = "0x335d0a83fa94be21d736ba01e6d64f17e85d958d"; 
+    contractAddress = "0x400f9c8391848041a181b4ef9351262db23cd2e9
+"; 
 }
 
 contract = web3.eth.contract(contractABI).at(contractAddress);
