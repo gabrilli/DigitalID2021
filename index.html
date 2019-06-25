@@ -58,72 +58,61 @@
 
 <div id = "cliente">
 
-        <form action="#" method="POST" name="formRegistro" id="formRegistro">
+      <form action="#" method="POST" name="formRegistro" id="formRegistro">
            
             <div>
-            <label for="Nome">Nome</label>:
-            <input type="text" name="Nome"
-             id="Nome" size=100 maxlenght=100
-             placeholder="Inserir nome completo" />
+              <label for="Nome">Nome</label>:
+              <input type="text" name="Nome"
+              id="Nome" size=100 maxlenght=100
+              placeholder="Inserir nome completo" />
             </div> 
             <div>             
-            <label for="CPF">CPF</label>:
-            <input type="number" name="CPF"
-            id="CPF" size=100 maxlenght=100
-            placeholder="Inserir CPF (somente números)" />
+              <label for="CPF">CPF</label>:
+              <input type="number" name="CPF"
+              id="CPF" size=100 maxlenght=100
+              placeholder="Inserir CPF (somente números)" />
             </div>
             <div>
-                <label for="Cel">Celular</label>:
-                <input type="number" name="Celular"
-                id="Celular" size=100 maxlenght=100
-                placeholder="Inserir celular com DDD (só números)" />
-                </div>
-                <div>             
-                    <label for="IP">IP: (protegido por segurança)</label>:
-                    <input type="text" name="IP"
-                    
-                    id="IP"/>
-                </div>
-                
-
-            <div>             
-                <label for="Latitude">Latitude: (protegido por segurança)</label>:
-                <input type="text" name="Latitude"
-                
-                id="Latitude"/>
+              <label for="Celular">Celular</label>:
+              <input type="number" name="Celular"
+              id="Celular" size=100 maxlenght=100
+              placeholder="Inserir celular com DDD (só números)" />
             </div>
             <div>             
-                <label for="Longitude">Longitude: (protegido por segurança)</label>:
-                <input type="text" name="Longitude"
-                
-                id="Longitude"/>
+              <label for="IP">IP: (protegido por segurança)</label>:
+              <input type="text" name="IP"  id="ip"/>
             </div>
-
-           
-            
+            <div>             
+              <label for="Latitude">Latitude: (protegido por segurança)</label>:
+              <input type="text" name="Latitude" id="Latitude"/>
+            </div>
+            <div>             
+              <label for="Longitude">Longitude: (protegido por segurança)</label>:
+              <input type="text" name="Longitude" id="Longitude"/>
+            </div>                      
             <div>
-                <p> <span id="geo1"></span></p>
-                <p> <span id="geo2"></span></p>
-                <p> <span id="ip"></span></p>
+              <p> <span id="geo1"></span></p>
+              <p> <span id="geo2"></span></p>
+              <p> <span id="ip"></span></p>
             </br>
             </div>
 
             <div>
-            <label for="Senha">Senha</label>:
-            <input type="password" name="Senha"
-            id="Senha" size=50 maxlenght=100
-            placeholder="Digite sua senha (maximo de 100 caracteres)" />
-           </div>
-<br/>             
+              <label for="Senha">Senha</label>:
+              <input type="password" name="Senha"
+              id="Senha" size=50 maxlenght=100
+              placeholder="Digite sua senha (maximo de 100 caracteres)" />
+            </div>
+    <br/>             
 
 <button type="submit" class="btn btn-primary" onclick="registrar()">Registrar</button>
 <button  class="btn btn-primary" onclick= "geracao()">Gerar Documento</button>
 </div>
 
 </form>
- <div>
- <div id="statusTransacao">&nbsp;</div>
- </div>
+<div>
+<div id="statusTransacao">&nbsp;</div>
+</div>
 </body>
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
