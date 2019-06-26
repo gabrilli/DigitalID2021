@@ -27,12 +27,7 @@
 
     </head>
 
-<body>
-
-    <body onload="getLocation()">
-    <body onload="getIP()">  
-         
-
+<body onLoad="inicio()">      
     <div class="jumbotron text-center">
         <h1>Crie sua primeira ID Digital na Blockchain da Ethereum!</h1>
         <p>É totalmente gratuito e você poderá utilizá-la em qualquer lugar</p> 
@@ -98,14 +93,7 @@
               id="Senha" size=50 maxlenght=100
               placeholder="Digite sua senha (maximo de 100 caracteres)" />
             </div>
-    <br/> 
-	      <div>
-              <p> <span id="geo1"></span></p>
-              <p> <span id="geo2"></span></p>
-              <p> <span id="ip"></span></p>
-            </br>
-            </div>  
-	      
+    <br/>     
 
 <button type="submit" class="btn btn-primary" onclick="registrar()">Registrar</button>
 <button  class="btn btn-primary" onclick= "geracao()">Gerar Documento</button>
@@ -121,15 +109,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="conectareth.js"></script>
 <script src="abi.js"></script>
-
-
 <script>
 function geracao () {
     event.preventDefault ();
-    window.open("popup.html")}
-</script>
+    window.open("popup.html")
+}
 
-<script>
 var frm = document.formRegistro;
 function registrar () {
 event.preventDefault();
@@ -145,9 +130,7 @@ contract.gerarid (frm.Nome.value, frm.CPF.value, frm.Celular.value, frm.Latitude
     waitForTxToBeMined(resultado, "#statusTransacao");
 });
 }
-</script>
 
-<script>
 var geo = document.getElementById("geo");
 function getLocation() {
       if (navigator.geolocation) {
@@ -162,15 +145,15 @@ function showPosition(position) {
 	frm.Longitude.value = position.coords.longitude;
 } 
  
-</script>
-
-
-<script type="application/javascript">
-  var ip = document.getElementById("ip");
-  function getIP(json) {
-    ip.innerHTML = "<br>IP: " + json.ip;
-  
-  }
+var ip = document.getElementById("ip");
+function getIP(json) {
+   ip.innerHTML = "<br>IP: " + json.ip;
+}
+	
+function iniciar() {
+	getLocation();
+	getIP();
+}
 </script>
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
