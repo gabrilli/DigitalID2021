@@ -44,7 +44,8 @@
   <div>
     <div id="resultadoPesquisa"></div>
   </div>
-  <svg id="imprimir"></svg>
+  <svg id="imprimir1"></svg>
+  <svg id="imprimir2"></svg>
 </div>
 <script>
     var textoRetorno = "";
@@ -73,8 +74,8 @@
                                         "<br>Latitude: " + resultado[6] + "<br>Longitude: " + resultado[7] +   "<br>IP: " + resultado[8];
             textoRetorno2 = "<br>Latitude: " + resultado[6];
             $("#resultadoPesquisa").html(textoRetorno);
-            JsBarcode('#imprimir',textoRetorno);
-            JsBarcode('#imprimir',textoRetorno2);
+            JsBarcode('#imprimir1',textoRetorno);
+            JsBarcode('#imprimir2',textoRetorno2);
           
         })
     }    
