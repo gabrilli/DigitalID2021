@@ -12,8 +12,7 @@
 
 </head>
 <body>
-<br>  
-
+  <br>  
   <div id = "cliente">
   <form action="#" method="POST" name="formimprimirid" id="formimprimirid">
       <div>
@@ -29,110 +28,52 @@
       <input type="password" name="Senha"
        id="Senha" size=100 maxlenght=100
        placeholder="Senha" />
-  </div>
-       
-<br>
+  </div> 
+  <br>
 
-<div>
-<button  class="btn btn-primary" onclick= "imprimirid()">Gerar Documento</button>
-</div>    
+  <div>
+    <button  class="btn btn-primary" onclick= "imprimirid()">Gerar Documento</button>
+  </div>    
 </form> 
 <hr>  
-  
-    <script>
-        var frm2 = document.formimprimirid;
-        function imprimirid() {
-            event.preventDefault();
-            $("#resultadoPesquisa").html("");
-            contract.imprimirid(frm2.CPF.value, frm2.Senha.value, function (erro, resultado) {
-                if (erro) {
-                    console.log("pesquisarImovel");
-                    console.error(erro);
-                    alert("Houve um erro ao pesquisar o nome do proprietário");
-                    frmid.Nome.value = "";
-                    frmid.CPF.value = "";
-                    frmid.Identificador.value = "";
-                    frmid.Timestamp.value = "";
-                    frmid.Bloco.value = "";
-                    frmid.Latitude.value = "";
-                    frmid.Longitude.value = "";
-                    frmid.IP.value = "";
-
-
-                    return
-                }
-                $("#resultadoPesquisa").html("O proprietário do imóvel informado é: " + resultado);
-            })
-        }
-    </script>
-
 <h2>ID Digital</h2>
 <p>ID Digital criado na Blockchain da Ethereum</p>
 <p>Powered by Simões Advogados</p>
 
 <div>
-<div>
- <div id="resultadoPesquisa"></div>
-
+  <div>
+    <div id="resultadoPesquisa"></div>
   </div>
-   <div id="imprimir">
-    <form action="#" method="GET" name="frmid" id="frmid">
-      <div>
-        <label for="Nome">Nome:</label>: <input type="text" name="Nome"  id="Nome"/>
-        <label for="CPF">CPF:</label>:  <input type="number" name="CPF"  id="CPF"/>
-        <label for="Celular">Celular:</label>: <input type="number" name="Celular"id="Celular"/>  
-        <label for="Identificador">Identificador:</label>: <input type="text" name="Identificador"  id="Identificador"/>
-        <label for="Timestamp">Timestamp:</label>: <input type="number" name="Timestamp"  id="Timestamp"/>
-        <label for="Bloco">Bloco:</label>: <input type="number" name="Bloco"  id="Bloco"/>
-        <label for="Latitude">Latitude:</label>:  <input type="text" name="Latitude"  id="Latitude"/>
-        <label for="Longitude">Longitude:</label>: <input type="text" name="Longitude"  id="Longitude"/>
-        <label for="IP">Longitude:</label>: <input type="text" name="IP"  id="IP"/>
-        <br>
-
-
-
-<div>
-  
-  <onblur="GerarCódigoDeBarras1(this)"/>
+  <svg id="imprimir"></svg>
 </div>
-<svg id="codBarras1"></svg>
-
-<div>
-  
-  <onblur="GerarCódigoDeBarras2(this)"/>
-</div>
-<svg id="codBarras2"></svg>
-
-
-
-
+<script>
+    var textoRetorno = "";
+    var frm2 = document.formimprimirid;
+    function imprimirid() {
+        event.preventDefault();
+        $("#resultadoPesquisa").html("");
+        contract.imprimirid(frm2.CPF.value, frm2.Senha.value, function (erro, resultado) {
+            if (erro) {
+                console.log("pesquisarImovel");
+                console.error(erro);
+                alert("Houve um erro ao pesquisar o nome do proprietário");
+                frmid.Nome.value = "";
+                frmid.CPF.value = "";
+                frmid.Identificador.value = "";
+                frmid.Timestamp.value = "";
+                frmid.Bloco.value = "";
+                frmid.Latitude.value = "";
+                frmid.Longitude.value = "";
+                frmid.IP.value = "";
+                return
+            }
+            textoRetorno = "Nome: " + resultado[0] + "<br>CPF: " + resultado[1] + "<br>Celular: " + resultado[2]+
+                                        "<br>Identificador: " + resultado[3] + "<br>Timestamp: " + resultado[4] + "<br>Bloco: " + resultado[5] +
+                                        "<br>Latitude: " + resultado[6] + "<br>Longitude: " + resultado[7] +   "<br>IP: " + resultado[8];
+            $("#resultadoPesquisa").html(textoRetorno);
+            JsBarcode('#imprimir',textoRetorno);
+        })
+    }    
+ </script>
 </body>
-
-
-
-/*
-    var geo = document.getElementById("geo");
-
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        geo.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-        
-    function showPosition(position) {
-      geo.innerHTML = "Latitude: " + position.coords.latitude + 
-      "<br>Longitude: " + position.coords.longitude; 
-      JsBarcode('#codBarras1', position.coords.latitude)
-      JsBarcode('#codBarras2', position.coords.longitude)
-    }
-    */
-
-    
-
-</script>
-
-
-
 </html>
