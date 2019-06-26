@@ -145,9 +145,8 @@ function showPosition(position) {
 	frm.Longitude.value = position.coords.longitude;
 } 
  
-var ip = document.getElementById("ip");
 function getIP(json) {
-   ip.innerHTML = "<br>IP: " + json.ip;
+  frm.IP.value = json.ip;
 }
 	
 function iniciar() {
