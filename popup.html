@@ -74,7 +74,7 @@
             }
             textoRetorno = "Nome: " + resultado[0] + "<br>CPF: " + resultado[1] + "<br>Celular: " + resultado[2]+
                             "<br>Identificador: " + resultado[3] + "<br>Timestamp: " + resultado[4] + "<br>Bloco: " + resultado[5] +
-                             "<br>" + resultado[6] + "<br>" + resultado[7] +   "<br>" + resultado[8];
+                            "<br>" + resultado[6] + "<br>" + resultado[7] +   "<br>" + resultado[8];
           
           textoRetorno1 = resultado[6];  
           textoRetorno2 = resultado[7];
@@ -83,12 +83,9 @@
            // $("#resultadoPesquisa").html(textoRetorno1);
            // $("#resultadoPesquisa").html(textoRetorno2);
             JsBarcode('#imprimir1',textoRetorno1);
-          <br>
             JsBarcode('#imprimir2',textoRetorno2);
-          <br>
             JsBarcode('#imprimir3',textoRetorno3);
-          <br>
-          
+                
         })
     }    
  </script>
