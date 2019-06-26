@@ -11,9 +11,8 @@
 <script src="abi.js"></script>
 
 </head>
-<body>
-<br>  
-
+<body onLoad="imprimirid()">
+  <br>  
   <div id = "cliente">
   <form action="#" method="POST" name="formimprimirid" id="formimprimirid">
       <div>
@@ -29,38 +28,26 @@
       <input type="password" name="Senha"
        id="Senha" size=100 maxlenght=100
        placeholder="Senha" />
-  </div>
+  </div> 
+  <br>
 
-  
-<br>
-
-<div>
-<button  class="btn btn-primary" onclick= "imprimirid()">Gerar Documento</button>
-</div>    
+  <div>
+    <button  class="btn btn-primary" onclick= "imprimirid()">Gerar Documento</button>
+  </div>    
 </form> 
 <hr>  
-  
-  
-
 <h2>ID Digital</h2>
 <p>ID Digital criado na Blockchain da Ethereum</p>
 <p>Powered by Simões Advogados</p>
 
 <div>
-<div>
- <div id="resultadoPesquisa"></div>
-
+  <div>
+    <div id="resultadoPesquisa"></div>
   </div>
-   <div id="imprimir">
-    <form action="#" method="GET" name="frmid" id="frmid">
-      ---
-
-
-
-
-</body>
-
+  <div id="imprimir"></div>
+</div>
 <script>
+    var textoRetorno = "";
     var frm2 = document.formimprimirid;
     function imprimirid() {
         event.preventDefault();
@@ -80,19 +67,13 @@
                 frmid.IP.value = "";
                 return
             }
-            $("#resultadoPesquisa").html("Nome: " + resultado[0] + "<br>CPF: " + resultado[1] + "<br>Celular: " + resultado[2]+
+            textoRetorno = "Nome: " + resultado[0] + "<br>CPF: " + resultado[1] + "<br>Celular: " + resultado[2]+
                                         "<br>Identificador: " + resultado[3] + "<br>Timestamp: " + resultado[4] + "<br>Bloco: " + resultado[5] +
-                                        "<br>Latitude: " + resultado[6] + "<br>Longitude: " + resultado[7] +   "<br>IP: " + resultado[8])
+                                        "<br>Latitude: " + resultado[6] + "<br>Longitude: " + resultado[7] +   "<br>IP: " + resultado[8];
+            $("#resultadoPesquisa").html(textoRetorno);
+            JsBarcode('#imprimir',textoRetorno);
         })
-    }
-</script>
-<script>
-      function showPosition(position) {
-      geo.innerHTML = "Latitude: " + position.coords.latitude + 
-      "<br>Longitude: " + position.coords.longitude; 
-      JsBarcode('#codBarras1', position.coords.latitude)
-      JsBarcode('#codBarras2', position.coords.longitude)
-    }
-     </script>
-
+    }    
+ </script>
+</body>
 </html>
