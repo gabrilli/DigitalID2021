@@ -48,6 +48,7 @@
 </div>
 <script>
     var textoRetorno = "";
+    var textoRetorno2= "";
     var frm2 = document.formimprimirid;
     function imprimirid() {
         event.preventDefault();
@@ -70,8 +71,11 @@
             textoRetorno = "Nome: " + resultado[0] + "<br>CPF: " + resultado[1] + "<br>Celular: " + resultado[2]+
                                         "<br>Identificador: " + resultado[3] + "<br>Timestamp: " + resultado[4] + "<br>Bloco: " + resultado[5] +
                                         "<br>Latitude: " + resultado[6] + "<br>Longitude: " + resultado[7] +   "<br>IP: " + resultado[8];
+            textoRetorno2 = "<br>Latitude: " + resultado[6];
             $("#resultadoPesquisa").html(textoRetorno);
             JsBarcode('#imprimir',textoRetorno);
+            JsBarcode('#imprimir',textoRetorno2);
+          
         })
     }    
  </script>
