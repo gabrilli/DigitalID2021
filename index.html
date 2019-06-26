@@ -158,8 +158,9 @@ function getLocation() {
     }
         
 function showPosition(position) {
-geo1.innerHTML = "<br>Latitude: " + position.coords.latitude;
-geo2.innerHTML = "<br>Longitude: " + position.coords.longitude;} 
+	frm.Latitude.value = position.coords.latitude;
+	frm.Longitude.value = position.coords.longitude;
+} 
  
 </script>
 
