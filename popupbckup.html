@@ -44,10 +44,15 @@
   <div>
     <div id="resultadoPesquisa"></div>
   </div>
-  <svg id="imprimir"></svg>
+  <svg id="imprimir1"></svg>
+  <svg id="imprimir2"></svg>
+  <svg id="imprimir3"></svg>
 </div>
 <script>
-    var textoRetorno = "";
+    var textoRetorno = ""; 
+    var textoRetorno1 = "";
+    var textoRetorno2 = "";
+    var textoRetorno3 = "";
     var frm2 = document.formimprimirid;
     function imprimirid() {
         event.preventDefault();
@@ -68,10 +73,19 @@
                 return
             }
             textoRetorno = "Nome: " + resultado[0] + "<br>CPF: " + resultado[1] + "<br>Celular: " + resultado[2]+
-                                        "<br>Identificador: " + resultado[3] + "<br>Timestamp: " + resultado[4] + "<br>Bloco: " + resultado[5] +
-                                        "<br>Latitude: " + resultado[6] + "<br>Longitude: " + resultado[7] +   "<br>IP: " + resultado[8];
+                            "<br>Identificador: " + resultado[3] + "<br>Timestamp: " + resultado[4] + "<br>Bloco: " + resultado[5] +
+                            "<br>" + resultado[6] + "<br>" + resultado[7] +   "<br>" + resultado[8];
+          
+          textoRetorno1 = resultado[6];  
+          textoRetorno2 = resultado[7];
+          textoRetorno3 = resultado[8];
             $("#resultadoPesquisa").html(textoRetorno);
-            JsBarcode('#imprimir',textoRetorno);
+           // $("#resultadoPesquisa").html(textoRetorno1);
+           // $("#resultadoPesquisa").html(textoRetorno2);
+            JsBarcode('#imprimir1',textoRetorno1);
+            JsBarcode('#imprimir2',textoRetorno2);
+            JsBarcode('#imprimir3',textoRetorno3);
+                
         })
     }    
  </script>
