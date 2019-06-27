@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>ID Digital</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/JsBarcode.all.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="conectareth.js"></script>
+<script src="abi.js"></script>
+
+</head>
+<body>
+  <br>  
+  <div id = "cliente">
+  <form action="#" method="POST" name="formimprimirid" id="formimprimirid">
+      <div>
+      <label for="CPF">CPF</label>:
+      <input type="text" name="CPF"
+       id="CPF" size=100 maxlenght=100
+       placeholder="CPF" />
+    </div>  
+      </br>
+      </br>
+     <div>
+      <label for="Senha">Senha</label>:
+      <input type="password" name="Senha"
+       id="Senha" size=100 maxlenght=100
+       placeholder="Senha" />
+  </div> 
+  <br>
+
+  <div>
+    <button  class="btn btn-primary" onclick= "imprimirid()">Gerar Documento</button>
+  </div>    
+</form> 
+<hr>  
+<h2>ID Digital</h2>
+<p>ID Digital criado na Blockchain da Ethereum</p>
+<p>Powered by Simões Advogados</p>
+
+<div>
+  <div>
+    <div id="resultadoPesquisa"></div>
+  </div>
+  <svg id="imprimir1"></svg>
+  <br>
+  <svg id="imprimir2"></svg>
+  <br>
+  <svg id="imprimir3"></svg>
+</div>
+<script>
+    var textoRetorno = ""; 
+    var textoRetorno1 = "";
+    var textoRetorno2 = "";
+    var textoRetorno3 = "";
+    var frm2 = document.formimprimirid;
+    function imprimirid() {
+        event.preventDefault();
+        $("#resultadoPesquisa").html("");
+        contract.imprimirid(frm2.CPF.value, frm2.Senha.value, function (erro, resultado) {
+            if (erro) {
+                console.log("pesquisarImovel");
+                console.error(erro);
+                alert("Houve um erro ao pesquisar o nome do proprietário");
+                frmid.Nome.value = "";
+                frmid.CPF.value = "";
+                frmid.Identificador.value = "";
+                frmid.Timestamp.value = "";
+                frmid.Bloco.value = "";
+                frmid.Latitude.value = "";
+                frmid.Longitude.value = "";
+                frmid.IP.value = "";
+                return
+            }
+            textoRetorno = "Nome: " + resultado[0] + "<br>CPF: " + resultado[1] + "<br>Celular: " + resultado[2]+
+                            "<br>Identificador: " + resultado[3] + "<br>Timestamp: " + resultado[4] + "<br>Bloco: " + resultado[5];
+          
+          textoRetorno1 = resultado[6];  
+          textoRetorno2 = resultado[7];
+          textoRetorno3 = resultado[8];
+            $("#resultadoPesquisa").html(textoRetorno);
+           // $("#resultadoPesquisa").html(textoRetorno1);
+           // $("#resultadoPesquisa").html(textoRetorno2);
+            JsBarcode('#imprimir1',textoRetorno1);
+            JsBarcode('#imprimir2',textoRetorno2);
+            JsBarcode('#imprimir3',textoRetorno3);
+                
+        })
+    }    
+ </script>
+</body>
+</html>
