@@ -165,6 +165,245 @@ const contractABI = [
 		"constant": true,
 		"inputs": [
 			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "ListaClientesM1",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			},
+			{
+				"name": "Latitude",
+				"type": "string"
+			},
+			{
+				"name": "Longitude",
+				"type": "string"
+			},
+			{
+				"name": "IP",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "ListaClientesM2",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			},
+			{
+				"name": "Latitude",
+				"type": "string"
+			},
+			{
+				"name": "Longitude",
+				"type": "string"
+			},
+			{
+				"name": "IP",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "ListaClientesM3",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			},
+			{
+				"name": "Latitude",
+				"type": "string"
+			},
+			{
+				"name": "Longitude",
+				"type": "string"
+			},
+			{
+				"name": "IP",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "ListaClientesM4",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			},
+			{
+				"name": "Latitude",
+				"type": "string"
+			},
+			{
+				"name": "Longitude",
+				"type": "string"
+			},
+			{
+				"name": "IP",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "Celular",
+				"type": "uint256"
+			}
+		],
+		"name": "procurarporcelular",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Idetificador",
+				"type": "bytes32"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
 				"name": "CPF",
 				"type": "uint256"
 			}
@@ -195,10 +434,45 @@ const contractABI = [
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "Identificador",
+				"type": "bytes32"
+			}
+		],
+		"name": "procurarporidentificador",
+		"outputs": [
+			{
+				"name": "Nome",
+				"type": "string"
+			},
+			{
+				"name": "Celular",
+				"type": "uint256"
+			},
+			{
+				"name": "CPF",
+				"type": "uint256"
+			},
+			{
+				"name": "Timestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "Bloco",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
 ];
 
-if (network === "4") {
+if (network === "3") {
     contractAddress = "0xf0933F2a9cA513ec7be2d923Adf7D9B45A6B80bD"; 
 } else {
     contractAddress = "0xf0933F2a9cA513ec7be2d923Adf7D9B45A6B80bD"; 
