@@ -84,7 +84,7 @@
     var frm2 = document.formimprimirid;
     function imprimirid() {
         event.preventDefault();
-        $("#resultadoPesquisa").html("");
+        $("#resultado").html("");
         contract.imprimirid(frm2.CPF.value, frm2.Senha.value, function (erro, resultado) {
             if (erro) {
                 console.log("nao rolou");
