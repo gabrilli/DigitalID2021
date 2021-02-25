@@ -87,11 +87,12 @@
         $("#resultadoPesquisa").html("");
         contract.imprimirid(frm2.CPF.value, frm2.Senha.value, function (erro, resultado) {
             if (erro) {
-                console.log("pesquisarImovel");
+                console.log("nao rolou");
                 console.error(erro);
-                alert("Houve um erro ao pesquisar o nome do proprietário");
+                alert("tem algo zuado");
                 frmid.Nome.value = "";
-                frmid.CPF.value = "";
+		frmid.CPF.value = "";
+		frmid.Celular.value="";      
                 frmid.Identificador.value = "";
                 frmid.Timestamp.value = "";
                 frmid.Bloco.value = "";
