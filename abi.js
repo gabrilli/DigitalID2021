@@ -472,7 +472,7 @@ const contractABI = [
 	}
 ];
 
-if (network === "3") {
+if (network === "4") {
     contractAddress = "0xf0933F2a9cA513ec7be2d923Adf7D9B45A6B80bD"; 
 } else {
     contractAddress = "0xf0933F2a9cA513ec7be2d923Adf7D9B45A6B80bD"; 
