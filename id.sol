@@ -21,7 +21,7 @@ contract Digitalid {
     }
     
     DigitalID[] ListaClientesA;
-    /*
+   
     mapping (uint256 => DigitalID) public ListaClientesM1;
     mapping (bytes32 => DigitalID) public ListaClientesM2;
     mapping (uint256 => DigitalID) public ListaClientesM3;
@@ -32,12 +32,11 @@ contract Digitalid {
         require (msg.sender == Onwer, "Operação exclusiva da Empresa");
         _;
     }
-    */
+    
     event NovaID (string Nome, uint256 CPF, uint256 Celular, 
     bytes32 Identificador,  uint256 Timestamp, uint256 Bloco, 
     string Latitude, string Longitude, string IP);
-    /*event Publicar (string Nome, uint256 CPF, uint256 Celular, bytes32 Identificador, uint256 Timestamp, uint256 Bloco, string Latitude, string Longitude, string IP);
-   */
+   
     
     constructor (address payable _Onwer) 
         public {
@@ -59,10 +58,10 @@ contract Digitalid {
         Timestamp, Bloco, Latitude, Longitude, IP);
        
         ListaClientesA.push(Temp);
-        /*ListaClientesM1[CPF] = Temp;
+        ListaClientesM1[CPF] = Temp;
         ListaClientesM2[Identificador]=Temp;
         ListaClientesM3[Celular]=Temp;
-        ListaClientesM4[Nome]=Temp;*/
+        ListaClientesM4[Nome]=Temp;
             
         
         emit NovaID (Nome, CPF, Celular, Identificador, 
@@ -111,7 +110,7 @@ contract Digitalid {
     }
     
     }
-    /*
+    
     function procurarporidentificador (bytes32 Identificador) public view returns (string memory Nome, uint Celular, uint CPF, uint Timestamp, uint Bloco) {    
     
     uint x;
@@ -138,6 +137,6 @@ contract Digitalid {
     }
     } 
    
-     */
+     
         
 }
