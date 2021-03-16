@@ -1,4 +1,4 @@
 solidity ok
 abi ok
 conectar ok
-https://gabrilli.github.io/digitalid2021/index.html
+https://gabrilli.github.io/DigitalID2021/index.html
